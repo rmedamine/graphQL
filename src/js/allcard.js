@@ -28,7 +28,6 @@ export async function Cards() {
     
 }
 
-// first card level
 function level(data) {
     let cards = null
     Object.entries(data).forEach(c => {
@@ -42,10 +41,12 @@ function level(data) {
     
     return cards
 }
+
 function topSkills(data) {
     let cards = DivsIndes("cards");
     let Skills = Content("Top 3 Skills");
     let top_skills = null
+
     cards.append(Skills);
     Object.entries(data).forEach(([_, ele]) => {
         top_skills = ele.user[0].sklis.sort((a, b) => b.amount - a.amount).slice(0, 3);
@@ -56,7 +57,6 @@ function topSkills(data) {
         { color: "#6160FF", width: "", text: "", },
         { color: "#3EC5E0", width: "", text: "", },
         { color: "#4D96FF", width: "", text: "", },
-        // { color: "#F9B824", width: "", text: "", }
     ];
     skillData = skillData.map((item, index) => ({
         ...item,
@@ -68,7 +68,7 @@ function topSkills(data) {
         const svg = generetsvg("svg", {
             width: "500",
             height: "15",
-            preserveAspectRatio: "xMidYMid meet", // Ensures full visibility
+            preserveAspectRatio: "xMidYMid meet", 
         });
         
         const rect = generetsvg("rect", {
@@ -97,11 +97,10 @@ function topSkills(data) {
 
 function totalxp(data) {
     let cards = DivsIndes("cards");
-    // let xp = Content("XP Board")
     let row_level = DivsIndes("row-level")
     let developer = DivsIndes("developer")
     let xp_level = DivsIndes("xp-level")
-    developer.textContent = "Total XP"
+    developer.textContent = "Total XP"    
     Object.entries(data).forEach(c => {
         let xp_total = c[1].user[0].totalXp.aggregate.sum.amount
         
