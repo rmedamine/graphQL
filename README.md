@@ -1,128 +1,116 @@
-# Zone01 GraphQL 
+# GraphQL Profile Dashboard
 
-## Overview
-This project is a personal profile page built using GraphQL, designed to interface seamlessly with the Zone01 platform's GraphQL API. It empowers students to authenticate securely using JWT, retrieve their academic and progress data, and visualize key statistics through interactive and dynamic SVG graphs.
+## 📝 Description
+This project is an interactive profile dashboard developed for Zone01, utilizing GraphQL to fetch and display student personal data. The application allows students to visualize their statistics, XP, and academic progress in a dynamic and interactive manner.
 
-## Table of Contents
-- Project Objectives
-- Features
-- Getting Started
-- Authentication
-- GraphQL API
-- UI Design
-- Graph Visualizations
-- Hosting
-- Technologies Used
-- Contributing
-- License
+## ✨ Features
 
-## Project Objectives
-- Master the GraphQL query language by developing a dynamic and personalized profile page.
-- Implement secure user authentication using JWT tokens provided by the Zone01 API.
-- Query and display personalized data including XP, grades, skills, and audit information.
-- Develop at least two distinct SVG-based statistical graphs to illustrate academic progress.
-- Deliver a responsive and user-friendly interface emphasizing strong UI/UX design principles.
-- Deploy the profile page on a static hosting platform of your choice (e.g., GitHub Pages, Netlify).
+### 🔐 Authentication
+- Secure login system with JWT
+- Support for both username:password and email:password
+- Authentication error handling
+- Secure logout functionality
 
-## Features
-- **Login Page:** Supports authentication using either username/email and password, with JWT-based security.
-- **Profile Dashboard:** Presents comprehensive user details such as identification info, XP totals, grades, skills, and audits.
-- **Interactive SVG Graphs:** Visualizes important statistics including XP progression over time, pass/fail project ratios, and audit completion rates.
-- **Secure Data Access:** All GraphQL queries require JWT Bearer tokens to ensure data privacy and security.
-- **Logout Functionality:** Enables users to safely terminate their sessions.
+### 📊 Data Visualization
+- **Personal Statistics**
+  - Total XP and progression
+  - Grades and audits
+  - Acquired skills
+  - Success ratio
 
-## Getting Started
+- **Interactive Graphs**
+  - XP progression over time
+  - Project success ratio
+  - Pool statistics
+  - Custom SVG visualizations
 
-### Prerequisites
-- A modern web browser with JavaScript enabled.
-- Network connectivity to the following Zone01 endpoints:
-  - `https://learn.zone01oujda.ma/api/graphql-engine/v1/graphql`
-  - `https://learn.zone01oujda.ma/api/auth/signin`
+## 🛠️ Technologies
+- **Frontend**
+  - JavaScript (ES6+)
+  - HTML5 & CSS3
+  - SVG for graphs
 
-### Installation
+- **Backend & API**
+  - GraphQL
+  - JWT Authentication
+  - REST API
+
+## 🚀 Installation
+
+1. **Clone the repository**
 ```bash
-git clone https://learn.zone01oujda.ma/git/rmohamme/graphql.git
+git clone https://learn.zone01oujda.ma/git/rmohamme/graphql
+```
+
+2. **Configuration**
+```bash
 cd graphql
-Open index.html in your preferred web browser to launch the login interface.
+```
 
-Authentication
-Obtain JWT tokens by sending a POST request to the signin endpoint:
-https://learn.zone01oujda.ma/api/auth/signin
+3. **Launch the application**
+```bash
+# Open index.html in your browser
+# or use a local server
+```
 
-Use Basic Authentication with base64-encoded credentials (username/email + password).
+## 💻 Usage
 
-Include the retrieved JWT token as a Bearer token in the Authorization header for all subsequent GraphQL API requests.
+1. **Login**
+   - Access the login page
+   - Enter your Zone01 credentials
+   - Validate to access your profile
 
-Display clear error messages for invalid login attempts.
+2. **Navigation**
+   - Explore your statistics
+   - Interact with graphs
+   - Check your progress
 
-GraphQL API
-Interact with the Zone01 GraphQL API at:
-https://learn.zone01oujda.ma/api/graphql-engine/v1/graphql
+## 🔍 GraphQL API
 
-Query user details, XP transactions, progress grades, project results, and more.
+### Endpoints
+- GraphQL API: `https://learn.zone01oujda.ma/api/graphql-engine/v1/graphql`
+- Authentication: `https://learn.zone01oujda.ma/api/auth/signin`
 
-Utilize arguments, nested queries, and filtering for precise data retrieval.
+### Query Example
+```graphql
+{
+  user {
+    id
+    login
+    transaction {
+      amount
+      type
+    }
+  }
+}
+```
 
-Explore the API schema conveniently via GraphiQL for enhanced development.
+## 📁 Project Structure
+```
+graphQL/
+├── src/
+│   ├── js/
+│   │   ├── login.js        # Authentication
+│   │   ├── allcard.js      # Data display
+│   │   ├── header.js       # Navigation
+│   │   └── getJWT.js       # JWT management
+│   ├── style/
+│   │   └── main.css        # Styles
+│   └── queries/            # GraphQL queries
+├── index.html
+└── home.js
+```
 
-UI Design
-Clean, modern, and responsive design prioritizing usability and clarity.
+## 🔒 Security
+- User input validation
+- XSS protection
+- Secure token management
+- Robust authentication
 
-Customizable profile sections include:
+## 👨‍💻 Author
+**raoui mohammed amine** - Zone01 Student
 
-Basic user information
-
-XP summary
-
-Grades overview
-
-Audit ratios
-
-Skills inventory
-
-Integrated loading indicators and error handling for a smooth user experience.
-
-Graph Visualizations
-Implemented with scalable and performant SVG elements.
-
-Graph types featured include:
-
-XP earned over time (progression charts)
-
-Project pass/fail distribution (pie and bar charts)
-
-Audit completion statistics
-
-Supports animations and interactivity to engage users with their data insights.
-
-Hosting
-Easily deployable on popular static hosting platforms such as:
-
-GitHub Pages
-
-Netlify
-
-Vercel
-
-Simply upload the project files and ensure API access for full functionality.
-
-Technologies Used
-JavaScript (ES6+)
-
-GraphQL
-
-JWT Authentication
-
-SVG for Data Visualization
-
-HTML5 & CSS3
-
-Contributing
-Contributions, bug reports, and feature requests are highly welcome. Please check the issues page for existing reports or submit new ones. Pull requests for improvements are appreciated.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for full details.
-
-For questions or support, please open an issue or submit a pull request.
-
-Happy coding! 🚀
+---
+<div align="center">
+Made with ❤️ at Zone01
+</div> 
