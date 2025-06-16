@@ -1,5 +1,7 @@
 # GraphQL Profile Dashboard
 
+Lien :  https://rmedamine.github.io/graphQL/
+
 ## 📝 Description
 This project is an interactive profile dashboard developed for Zone01, utilizing GraphQL to fetch and display student personal data. The application allows students to visualize their statistics, XP, and academic progress in a dynamic and interactive manner.
 
